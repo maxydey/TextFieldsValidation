@@ -15,6 +15,7 @@
 
 @property(nonatomic, strong) NSMutableArray *formItems;
 @property(nonatomic, strong) MDTextFieldValidator *validator;
+@property(nonatomic, assign) NSInteger editingFieldIndex;
 
 @end
 
@@ -25,7 +26,7 @@
     
     self.formItems = [[NSMutableArray alloc] init];
     
-    for(int i = 0; i<5; i++)
+    for(int i = 1; i<6; i++)
     {
         [self.formItems addObject:[MDValidatedItem itemWithTitle:[@"Characters" stringByAppendingFormat:@"%d",i]
                                                   validationRule:MDValidationRuleCharactersOnly]];
@@ -117,7 +118,7 @@
 
 -(void)keyboardWasShown:(NSNotification *)notification
 {
-    
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.editingFieldIndex inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 }
 
 - (void)keyboardWillBeHidden:(NSNotification*)notification
@@ -169,9 +170,14 @@
     return YES;
 }
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.editingFieldIndex = textField.tag;
+}
+
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [self.tableView reloadData];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:textField.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -190,10 +196,10 @@
 
 -(void)textField:(UITextField *)textField validationSuccess:(BOOL)success
 {
-    [textField resignFirstResponder];
+
     MDValidatedItem *item = self.formItems[textField.tag];
     [item setValid:success];
-    [self.tableView reloadData];
+
 }
 
 
