@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MDViewController : UIViewController
+@interface MDViewController : UIViewController<UITableViewDataSource,UITextFieldDelegate>
 
+
+@property(strong, nonatomic) IBOutlet UITableView *tableView;
 @end

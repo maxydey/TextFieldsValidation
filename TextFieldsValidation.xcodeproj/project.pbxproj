@@ -18,6 +18,9 @@
 		302544DE17C515B4005FA62A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302544DD17C515B4005FA62A /* Default-568h@2x.png */; };
 		302544E117C515B4005FA62A /* MDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302544E017C515B4005FA62A /* MDViewController.m */; };
 		302544E417C515B4005FA62A /* MDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302544E217C515B4005FA62A /* MDViewController.xib */; };
+		302544EC17C51854005FA62A /* MDTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302544EB17C51854005FA62A /* MDTextFieldTableViewCell.m */; };
+		302544EF17C51C6C005FA62A /* MDTextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 302544EE17C51C6C005FA62A /* MDTextFieldValidator.m */; };
+		302544F817C52F7D005FA62A /* MDValidatedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 302544F717C52F7D005FA62A /* MDValidatedItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,12 @@
 		302544DF17C515B4005FA62A /* MDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDViewController.h; sourceTree = "<group>"; };
 		302544E017C515B4005FA62A /* MDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDViewController.m; sourceTree = "<group>"; };
 		302544E317C515B4005FA62A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MDViewController.xib; sourceTree = "<group>"; };
+		302544EA17C51854005FA62A /* MDTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		302544EB17C51854005FA62A /* MDTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		302544ED17C51C6C005FA62A /* MDTextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTextFieldValidator.h; sourceTree = "<group>"; };
+		302544EE17C51C6C005FA62A /* MDTextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTextFieldValidator.m; sourceTree = "<group>"; };
+		302544F617C52F7D005FA62A /* MDValidatedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDValidatedItem.h; sourceTree = "<group>"; };
+		302544F717C52F7D005FA62A /* MDValidatedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDValidatedItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,12 @@
 				302544DF17C515B4005FA62A /* MDViewController.h */,
 				302544E017C515B4005FA62A /* MDViewController.m */,
 				302544E217C515B4005FA62A /* MDViewController.xib */,
+				302544F617C52F7D005FA62A /* MDValidatedItem.h */,
+				302544F717C52F7D005FA62A /* MDValidatedItem.m */,
+				302544EA17C51854005FA62A /* MDTextFieldTableViewCell.h */,
+				302544EB17C51854005FA62A /* MDTextFieldTableViewCell.m */,
+				302544ED17C51C6C005FA62A /* MDTextFieldValidator.h */,
+				302544EE17C51C6C005FA62A /* MDTextFieldValidator.m */,
 				302544CE17C515B4005FA62A /* Supporting Files */,
 			);
 			path = TextFieldsValidation;
@@ -177,6 +192,9 @@
 				302544D417C515B4005FA62A /* main.m in Sources */,
 				302544D817C515B4005FA62A /* MDAppDelegate.m in Sources */,
 				302544E117C515B4005FA62A /* MDViewController.m in Sources */,
+				302544EC17C51854005FA62A /* MDTextFieldTableViewCell.m in Sources */,
+				302544EF17C51C6C005FA62A /* MDTextFieldValidator.m in Sources */,
+				302544F817C52F7D005FA62A /* MDValidatedItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +280,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFieldsValidation/TextFieldsValidation-Prefix.pch";
 				INFOPLIST_FILE = "TextFieldsValidation/TextFieldsValidation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -273,7 +293,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFieldsValidation/TextFieldsValidation-Prefix.pch";
 				INFOPLIST_FILE = "TextFieldsValidation/TextFieldsValidation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
